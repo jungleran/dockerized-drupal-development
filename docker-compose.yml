@@ -19,11 +19,13 @@ services:
       - ./volumes/drupal/src:/var/www/html
       - ./volumes/drupal/php.ini:/usr/local/etc/php/php.ini
       - ./volumes/drupal/private:/files/private
+      - ./volumes/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+
     ports:
       - 8600:80
 
   drush:
-    image: jungle/drush:drupal8
+    image: jungleran/drush:drupal8
     container_name: drush
     volumes_from:
       - drupal
