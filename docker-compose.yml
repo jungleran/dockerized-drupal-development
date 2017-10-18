@@ -34,7 +34,8 @@ services:
       - bash
     tty: true
     volumes:
-      - ~/.cache/composer:/composer/cache
+      - $HOME/.composer/cache:/composer/cache
+
   pma:
     image: phpmyadmin/phpmyadmin
     container_name: pma
